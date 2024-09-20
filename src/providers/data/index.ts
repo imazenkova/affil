@@ -1,5 +1,5 @@
 import { fetchWrapper } from "./fetch-wrapper";
-export const API_BASE_URL = "http://https://app.bruxt.com/api-lenses";
+export const API_BASE_URL = "https://app.bruxt.com/api-lenses";
 export const API_URL = `${API_BASE_URL}`;
 
 
