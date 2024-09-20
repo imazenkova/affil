@@ -172,7 +172,7 @@ export const RegisterPage: React.FC<RegisterProps> = ({
                 type: "email",
                 message: translate(
                   "pages.register.errors.validEmail",
-                  "Invalid email address333"
+                  "Invalid email address"
                 ),
               },
             ]}
