@@ -1,4 +1,5 @@
 import {
+  useNotification,
     useTranslate
 } from "@refinedev/core";
 import { Button, Card, Col, Form, Input, Layout, Row } from "antd";
@@ -12,7 +13,7 @@ const EmailVerificationPage = () => {
   const [form] = Form.useForm();
   const translate = useTranslate();
 const navigate= useNavigate()
-
+const { open } = useNotification();
   useEffect(() => {
 
     const params = new URLSearchParams(window.location.search);
@@ -37,11 +38,18 @@ const navigate= useNavigate()
       });
 
       localStorage.setItem("accessToken", data.accessToken);
-    const res =   await dataProviderRest.create('referrers/verification', values);
-    console.log (res)
-// localStorage.setItem("accessToken")
-navigate('/')
+      open?.({
+        type: "success",
+        message: "Success",
+        description: "Email verified!",
+      }); 
+      navigate('/')
     } catch (error) {
+      open?.({
+        type: "error",
+         message: "Error",
+        description:"Failed!",
+      }); 
         console.log(error)
 
     }
