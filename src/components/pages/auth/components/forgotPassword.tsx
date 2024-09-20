@@ -58,10 +58,8 @@ export const ForgotPasswordPage: React.FC<ResetPassworProps> = ({
   const routerType = useRouterType();
   const Link = useLink();
   const { Link: LegacyLink } = useRouterContext();
-  const navigate = useNavigate();
   const ActiveLink = routerType === "legacy" ? LegacyLink : Link;
-  const { open } = useNotification();
-  
+
   const { mutate: forgotPassword, isLoading } =
     useForgotPassword<ForgotPasswordFormTypes>();
 

@@ -30,6 +30,7 @@ console.log({...values,userId:referrerId})
       await dataProviderRest.create('referrers/change-email/reset', {...values,userId:referrerId});
       open?.({
         type: "success",
+        message: "Success",
         description: "Email changed!",
       }); 
       navigate("/"); 
@@ -37,7 +38,7 @@ console.log({...values,userId:referrerId})
       const error = e as Error;
       open?.({
         type: "error",
-        // message: "Error",
+         message: "Error",
         description:"Failed! Try again!",
       }); 
         console.log(error)
