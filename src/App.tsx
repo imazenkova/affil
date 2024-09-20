@@ -61,7 +61,6 @@ function App() {
                               <Route path='/traffic' element={<TrafficListPage />} />
                         </Route>
                       <Route path='/verify' element={<EmailVerification />} />
-                      <Route path='/test2' element={<PasswordChange />} />
                       <Route path='/reset-password' element={<PasswordChange />} />
                       <Route path='/login' element={<Login />} />
                       <Route path='/forgot-password' element={<ForgotPassword />} />
