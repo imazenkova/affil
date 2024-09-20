@@ -1,0 +1,7 @@
+export * from './home'
+export * from './login'
+export * from './register'
+export * from './emailVerification'
+export * from './forgotPassword'
+export * from './passwordChange'
+export * from './emailChange'
