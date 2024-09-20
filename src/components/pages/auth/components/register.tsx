@@ -183,16 +183,16 @@ export const RegisterPage: React.FC<RegisterProps> = ({
             />
           </Form.Item>
           <Form.Item
-            name="first_name"
-            label={translate("pages.register.fields.first_name", "First name")}
+            name="firstName"
+            label={translate("pages.register.fields.firstName", "First name")}
           >
             <Input  size="large"
                 placeholder={translate("pages.register.fields.first_name", "First name")}
                  />
           </Form.Item>
           <Form.Item
-            name="flast_name"
-            label={translate("pages.register.fields.first_name", "Last name")}
+            name="lastName"
+            label={translate("pages.register.fields.lastName", "Last name")}
           >
             <Input  size="large" 
             placeholder={translate("pages.register.fields.first_name", "Last name")}/>

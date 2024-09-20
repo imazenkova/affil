@@ -38,12 +38,12 @@ export const authProvider: AuthProvider = {
       };
     }
   },
-  register: async ({ email, password }) => {
+  register: async ({ email, password ,firstName,lastName,country}) => {
     try {
       const { data } = await dataProvider(`${API_URL}`).create({
         resource: 'referrers/registration',
         variables: {
-          email, password,
+          email, password,firstName,lastName,country
         },
       });
 

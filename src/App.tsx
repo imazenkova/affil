@@ -45,31 +45,28 @@ function App() {
                  {/* <ThemedLayoutV2  Title={ThemedTitleV2}>
                  </ThemedLayoutV2> */}
                 <Routes>
-                <Route
-                  element={
-                    <Authenticated
-                      key="authenticated-layout"
-                      fallback={<CatchAllNavigate to="/login" />}
-                    >
-                      <Layout>
-                        <Outlet />
-                      </Layout>
-                    </Authenticated>
-                  }
-                >     
-                <Route index element={<DashboardPage />} />
-                <Route path='/traffic' element={<TrafficListPage />} />
-                {/* <Route path="/traffic">
-                    <Route index element={<TrafficListPage />} />
-                  </Route> */}
-                     </Route>
-                  <Route path='/verify' element={<EmailVerification />} />
-                  <Route path='/reset-password' element={<PasswordChange />} />
-                  <Route path='/login' element={<Login />} />
-                  <Route path='/forgot-password' element={<ForgotPassword />} />
-                  <Route path='/change-password' element={<ForgotPassword />} />
-                  <Route path='/register' element={<Register />} />
-                  <Route path='/change-email' element={<EmailChange />} />
+                        <Route
+                          element={
+                            <Authenticated
+                              key="authenticated-layout"
+                              fallback={<CatchAllNavigate to="/login" />}
+                            >
+                              <Layout>
+                                <Outlet />
+                              </Layout>
+                            </Authenticated>
+                          }
+                        >     
+                              <Route index element={<DashboardPage />} />
+                              <Route path='/traffic' element={<TrafficListPage />} />
+                        </Route>
+                      <Route path='/verify' element={<EmailVerification />} />
+                      <Route path='/reset-password' element={<PasswordChange />} />
+                      <Route path='/login' element={<Login />} />
+                      <Route path='/forgot-password' element={<ForgotPassword />} />
+                      <Route path='/change-password' element={<ForgotPassword />} />
+                      <Route path='/register' element={<Register />} />
+                      <Route path='/change-email' element={<EmailChange />} />
                 </Routes>
                 <RefineKbar />
                 <UnsavedChangesNotifier />

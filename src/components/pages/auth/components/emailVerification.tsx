@@ -3,14 +3,15 @@ import {
 } from "@refinedev/core";
 import { Button, Card, Col, Form, Input, Layout, Row } from "antd";
 import { useEffect } from "react";
-import { useLocation, useParams } from "react-router-dom";
-import { dataProviderRest } from "../../../../providers";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { API_URL, dataProviderRest } from "../../../../providers";
+import dataProvider from "@refinedev/simple-rest";
 
 
 const EmailVerificationPage = () => {
   const [form] = Form.useForm();
   const translate = useTranslate();
-
+const navigate= useNavigate()
 
   useEffect(() => {
 
@@ -27,8 +28,19 @@ const EmailVerificationPage = () => {
 
   const handleSubmit = async (values:any) => {
     try {
-      await dataProviderRest.create('verification', values);
+      const { data } = await dataProvider(`${API_URL}`).create({
+        resource: 'referrers/verification',
+        variables: {
+          email:values.email,
+          code:values.code,
+        },
+      });
 
+      localStorage.setItem("accessToken", data.accessToken);
+    const res =   await dataProviderRest.create('referrers/verification', values);
+    console.log (res)
+// localStorage.setItem("accessToken")
+navigate('/')
     } catch (error) {
         console.log(error)
 
