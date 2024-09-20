@@ -64,7 +64,7 @@ function App() {
                       <Route path='/reset-password' element={<PasswordChange />} />
                       <Route path='/login' element={<Login />} />
                       <Route path='/forgot-password' element={<ForgotPassword />} />
-                      <Route path='/change-password' element={<ForgotPassword />} />
+                      {/* <Route path='/change-password' element={<ForgotPassword />} /> */}
                       <Route path='/register' element={<Register />} />
                       <Route path='/change-email' element={<EmailChange />} />
                 </Routes>
