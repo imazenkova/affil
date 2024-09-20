@@ -20,7 +20,7 @@ const { open } = useNotification();
     const code = params.get("code");
     const email = params.get("email"); 
 
-    // Устанавливаем начальные значения формы
+
     form.setFieldsValue({
       email: email || '', 
       code: code || '', 
