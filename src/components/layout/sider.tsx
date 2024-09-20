@@ -297,8 +297,6 @@ export const ThemedSiderV2: React.FC<RefineThemedLayoutV2SiderProps> = ({
     const OpenIcon = direction === "rtl" ? RightOutlined : LeftOutlined;
     const CollapsedIcon = direction === "rtl" ? LeftOutlined : RightOutlined;
     const IconComponent = siderCollapsed ? CollapsedIcon : OpenIcon;
-
-    // @ts-expect-error Ant Design Icon's v5.0.1 has an issue with @types/react@^18.2.66
     return <IconComponent {...iconProps} />;
   };
 
