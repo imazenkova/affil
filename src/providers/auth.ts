@@ -48,7 +48,12 @@ export const authProvider: AuthProvider = {
       });
 
       return {
-        success: true
+        success: true,
+        redirectTo: '/login',
+        successNotification: {
+          message: "Successful",
+          description: "Instruction send to your email!",
+        }
       };
     } catch (e) {
       const error = e as Error;
