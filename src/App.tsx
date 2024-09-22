@@ -18,6 +18,7 @@ import { EmailChange, EmailVerification, ForgotPassword, Login, PasswordChange, 
 import { API_BASE_URL, authProvider } from "./providers";
 import { DashboardPage } from "./routes/dashboard";
 import { TrafficListPage } from "./routes/traffic";
+import { DevtoolsProvider, DevtoolsPanel } from "@refinedev/devtools";
 
 function App() {
   return (
@@ -26,7 +27,9 @@ function App() {
       <RefineKbarProvider>
    
           <AntdApp>
-            {/* <DevtoolsProvider> */}
+            <DevtoolsProvider
+                url="http://localhost:5000"
+            >
               <Refine
                 dataProvider={dataProvider(API_BASE_URL)}
                 notificationProvider={useNotificationProvider}
@@ -72,8 +75,8 @@ function App() {
                 <UnsavedChangesNotifier />
                 <DocumentTitleHandler />
               </Refine>
-              {/* <DevtoolsPanel /> */}
-            {/* </DevtoolsProvider> */}
+              <DevtoolsPanel />
+            </DevtoolsProvider>
           </AntdApp>
   
       </RefineKbarProvider>
